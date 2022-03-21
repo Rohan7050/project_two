@@ -4,17 +4,17 @@ const collegeSchema = mongoose.Schema({
     name : {
         type: String,
         unique: true,
-        required: true,
+        required: "please enter name",
         trim: true
     },
     fullName: {
         type: String,
-        required: true,
+        required: "please enter fullName",
         trim: true
     },
     logoLink:{
         type: String,
-        required: true,
+        required: "please enter logolink",
         trim: true
     },
     isDeleted:{
@@ -23,4 +23,4 @@ const collegeSchema = mongoose.Schema({
     }
 }, {timestamps: true})
 
-module.exports = mongoose.model("college", collegeSchema)
+module.exports = mongoose.model("College", collegeSchema)

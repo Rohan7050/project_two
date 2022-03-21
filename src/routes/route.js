@@ -13,8 +13,10 @@ router.get("/test", (req, res) => {
 
 // for college
 router.post("/colleges", collegeController.createCollege)
-
+router.get("/collegeDetails", collegeController.getCollege)
 
 // for intern
+router.post("/interns", internController.createIntern)
+
 
 module.exports = router

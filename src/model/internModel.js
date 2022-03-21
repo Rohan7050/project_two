@@ -3,12 +3,12 @@ const mongoose = require("mongoose")
 const internSchema = mongoose.Schema({
     name: {
         type: String,
-        required: true,
+        required: "please enter name",
         trim: true
     },
     email: {
         type:String,
-        required: true,
+        required: "please enter email",
         trim: true,
         lowercase: true,
         unique: true,
@@ -19,15 +19,15 @@ const internSchema = mongoose.Schema({
     },
     mobile: {
         type: String,
-        required: true,
-        match: [/^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/,
+        required: "please enter mobile number",
+        match: [/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im,
         "please enter valid mobile number"
         ]
   
     },
     collegeId: {
         type: mongoose.Schema.Types.ObjectId,
-        required:true
+        required: "please enter collage ID"
     },
     isDeleted: {
         type: Boolean,
