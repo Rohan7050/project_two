@@ -1,5 +1,4 @@
 const mongoose = require("mongoose")
-require('mongoose-type-url')
 
 const collegeSchema = mongoose.Schema({
     name : {
@@ -14,7 +13,7 @@ const collegeSchema = mongoose.Schema({
         trim: true
     },
     logoLink:{
-        type: mongoose.SchemaTypes.Url,
+        type: String,
         required: true,
         trim: true
     },

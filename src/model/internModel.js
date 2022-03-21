@@ -20,6 +20,10 @@ const internSchema = mongoose.Schema({
     mobile: {
         type: String,
         required: true,
+        match: [/^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/,
+        "please enter valid mobile number"
+        ]
+  
     },
     collegeId: {
         type: mongoose.Schema.Types.ObjectId,
