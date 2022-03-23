@@ -23,8 +23,8 @@ const internSchema = mongoose.Schema({
         match: [
             /^[789][0-9]{9}$/,
             "please enter valid mobile number"
-        ]
-  
+        ],
+        unique: true
     },
     collegeId: {
         type: mongoose.Schema.Types.ObjectId,

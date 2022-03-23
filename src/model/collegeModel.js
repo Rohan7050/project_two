@@ -3,6 +3,7 @@ const mongoose = require("mongoose")
 const collegeSchema = mongoose.Schema({
     name : {
         type: String,
+        lowercase: true,
         unique: true,
         required: "please enter name",
         trim: true
