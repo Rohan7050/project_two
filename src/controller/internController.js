@@ -14,8 +14,12 @@ const createIntern = async (req, res) => {
             return res.status(404).send({status: false, msg: "Enter valid college name"})
         }
         data.collegeId = collage._id
+        // return res.send({data: data.mobile.length})
+        // if (!data.mobile.length < 12){
+        //     return res.status(400).send({status: false, msg: "not a valid mobile number"})
+        // }
         const intern = await internModel.create(data)
-        return res.status(200).send({status: true, data: intern})
+        return res.status(201).send({status: true, data: intern})
     }catch(e){
         return res.status(400).send({status: false, msg: e.message})
     }

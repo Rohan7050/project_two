@@ -16,11 +16,14 @@ const createCollege = async (req, res) => {
 const getCollege = async (req, res) => {
     try{
         const {collegeName} = req.query
+        if (!collegeName){
+            return res.status(400).send({status: false, msg: "please enter college name"})
+        }
         const college = await collegeModel.findOne({name: collegeName}).select({isDeleted: 0})
-        const newCollege = JSON.parse(JSON.stringify(college))
         if (!college){
             return res.status(400).send({status: false, msg: "college not found"})
         }
+        const newCollege = JSON.parse(JSON.stringify(college))
         const id = college._id 
         const interns = await internModel.find({collegeId: id})
         // return res.send(interns)

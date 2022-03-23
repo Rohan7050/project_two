@@ -20,8 +20,9 @@ const internSchema = mongoose.Schema({
     mobile: {
         type: String,
         required: "please enter mobile number",
-        match: [/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im,
-        "please enter valid mobile number"
+        match: [
+            /^[789][0-9]{9}$/,
+            "please enter valid mobile number"
         ]
   
     },
@@ -36,3 +37,6 @@ const internSchema = mongoose.Schema({
 }, {timestamps: true});
 
 module.exports = mongoose.model("Intern", internSchema)
+
+//for mobile 10 to 12 length
+///^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
